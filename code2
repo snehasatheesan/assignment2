@@ -1,0 +1,18 @@
+1. Write a program to convert Celsius to Fahrenheit using appropriate datatypes and literal conventions.
+
+import java.util.Scanner;
+public class CelToFah {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter temp in celsius: ");
+        double cel = scanner.nextDouble();
+        double fah = (celsius * 9 / 5) + 32;
+        System.out.println(cel + " degrees Celsius is equal to " + fah + " degrees Fahrenheit");
+        scanner.close();
+    }
+}
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+2. Write a program to solve a quadratic equation (ax^2+bx+c). Take a,b and c from user and use quadratic formula.
+
