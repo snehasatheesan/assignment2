@@ -2,17 +2,97 @@
 
 import java.util.Scanner;
 public class CelToFah {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter temp in celsius: ");
-        double cel = scanner.nextDouble();
-        double fah = (celsius * 9 / 5) + 32;
-        System.out.println(cel + " degrees Celsius is equal to " + fah + " degrees Fahrenheit");
-        scanner.close();
-    }
-}
+public static void main(String[] args) {
+Scanner s= new Scanner(System.in);
+		 System.out.print("Enter temp in celsius: ");
+		 double cel = s.nextDouble();
+		 double fah = (cel* 9 / 5) + 32;
+		 System.out.println(cel + " degrees Celsius is equal to " + fah + " degrees Fahrenheit");
+		 s.close();
+		    }
+		}
 ________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
 2. Write a program to solve a quadratic equation (ax^2+bx+c). Take a,b and c from user and use quadratic formula.
 
+import java.util.Scanner;
+
+public class VarScope {
+	public static void main(String[] args) {
+		 Scanner s= new Scanner (System.in);
+		  System.out.println("enter the number");
+		    double a= s.nextDouble();
+		     double b= s.nextDouble();
+		     double c= s.nextDouble(); 
+		    double discriminant = b * b - 4 * a * c;
+
+		         if (discriminant > 0) {
+		            double t = (-b + Math.sqrt(discriminant)) / (2 * a);
+		            double h = (-b - Math.sqrt(discriminant)) / (2 * a);
+		            System.out.println("roots are real and different");
+		            System.out.println("firstRoot: " + t);
+		            System.out.println("SecondRoot: " + h);
+		        } else if (discriminant == 0) {
+		            double f= -b / (2 * a);
+		            System.out.println(" root is real and repeated.");
+		            System.out.println("f: " + f);
+		        } else {
+		            double original = -b / (2 * a);
+		            double imaginary = Math.sqrt(-discriminant) / (2 * a);
+		            System.out.println(" roots are complex and different");
+		            System.out.println("firstRoot : " + original + " + " + imaginary + "i");
+		            System.out.println("SecondRoot: " + original + " - " + imaginary + "i");
+		        }
+
+		        
+				s.close();
+		    }
+		}
+	
+
+_____________________________________________________________________________________________________________________________________________________________________________________________
+
+3.Get two numbers from user and perform bitwise AND< OR, XOR, left and right shift operations on them.
+
+import java.util.Scanner;
+ public class Bitwise {
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+System.out.print("Enter the first number: ");
+  int a = scanner.nextInt();
+   System.out.print("Enter the second number: ");
+     int b= scanner.nextInt();
+  int andAnswer = a & b;
+     int orAnswer = a | b;
+        int xorAnswer = a ^ b;
+     int leftShiftAnswer = a << 1;
+    int rightShiftAnswer = a >> 1;
+    System.out.println("Bitwise AND of " + a + " and " + b + " is: " + andAnswer);
+     System.out.println("Bitwise OR of " + a + " and " + b + " is: " + orAnswer);
+     System.out.println("Bitwise XOR of " + a + " and " + b + " is: " + xorAnswer);
+    System.out.println("Left shift of " + a + " by 1 is: " + leftShiftAnswer);
+     System.out.println("Right shift of " + a + " by 1 is: " + rightShiftAnswer);
+     s.close();
+    }
+}
+________________________________________________________________________________________________________________________________________________________________________________________
+
+
+4. Write a program with an if statement. Declare one variable inside the if block and another one outside. Print both variables inside and outside the if block to understand variable scope. (Comment the compiler error in your program while submitting)
+package laptop1;
+  public class VarScope {
+    public static void main(String[] args) {
+
+        int t=5;
+        if(t>3){
+            int s=8;
+            System.out.println("t:"+t+"s:"+s);
+            }
+          System.out.println("t:"+t+"s:"+s);
+    }
+}
+
+//Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	//s cannot be resolved to a variable
+    //at laptop/laptop1.VarScope.main
